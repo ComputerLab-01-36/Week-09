@@ -40,5 +40,16 @@ namespace GDIPlus_1
             e.Graphics.FillRectangle(pnlGdt, panel2.ClientRectangle);
             pnlGdt.Dispose();
         }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(panel6.ClientRectangle);
+            PathGradientBrush br = new PathGradientBrush(path);
+            br.CenterPoint = new PointF(panel6.ClientRectangle.Width / 2, panel1.ClientRectangle.Height / 2);
+            br.CenterColor = Color.Navy;
+            br.SurroundColors = new Color[] { Color.Yellow };
+            e.Graphics.FillPath(br, path);
+        }
     }
 }
