@@ -16,5 +16,23 @@ namespace GDIPlus_1
         {
             InitializeComponent();
         }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Bitmap bmp= new Bitmap("D:\\1.JPG");
+            this.SetClientSizeCore(bmp.Width, bmp.Height);
+            Rectangle destRect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            Brush myBrush = new SolidBrush(Color.Coral);
+            g.DrawImage(bmp, destRect);
+            g.DrawString("Hello World",
+            new Font("Verdana", 30, FontStyle.Bold),
+            myBrush,
+            0,
+            0);
+            g.Dispose();
+
+
+        }
     }
 }
