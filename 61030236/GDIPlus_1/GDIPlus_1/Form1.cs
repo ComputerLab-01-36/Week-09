@@ -19,6 +19,14 @@ namespace GDIPlus_1
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            Graphics g = e.Graphics;
+            Pen bluepen = new Pen(Color.Blue, 2);
+            g.DrawRectangle(bluepen, 10, 10, 100, 100);
+            bluepen.Dispose();
+
+            Pen SomePen = new Pen(Color.FromArgb(255, 120, 200));
+            g.DrawEllipse(SomePen, 20, 20, 200, 200);
+            SomePen.Dispose();
 
         }
     }
