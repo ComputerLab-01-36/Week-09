@@ -16,5 +16,17 @@ namespace GDIPlus_1
         {
             InitializeComponent();
         }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Bitmap mbp = new Bitmap("D:\\fig-01.PNG");
+            Rectangle destrect = new Rectangle(10, 10, mbp.Width / 2, mbp.Height / 2);
+            Rectangle srcrect = new Rectangle(0, 0, mbp.Width, mbp.Height);
+            this.SetClientSizeCore(destrect.Width + 20, destrect.Height + 20);
+            g.DrawImage(mbp, destrect, srcrect, GraphicsUnit.Pixel);
+            g.Dispose();
+
+        }
     }
 }
