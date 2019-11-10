@@ -1,4 +1,6 @@
-﻿namespace GDIPlus_1
+﻿using System;
+
+namespace GDIPlus_1
 {
     partial class Form1
     {
@@ -28,10 +30,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            System.Windows.Forms.PaintEventHandler paintEventHandler = new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.Paint += paintEventHandler;
+            this.ResumeLayout(false);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
