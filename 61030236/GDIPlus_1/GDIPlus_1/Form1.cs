@@ -16,5 +16,17 @@ namespace GDIPlus_1
         {
             InitializeComponent();
         }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen myPen = new Pen(Color.Blue, 3);
+            g.DrawRectangle(myPen, 10, 120, 100, 100);
+
+            Rectangle rect = new Rectangle(10, 10, 100, 100);
+            g.DrawRectangle(myPen, rect);
+            g.Dispose();
+
+        }
     }
 }
