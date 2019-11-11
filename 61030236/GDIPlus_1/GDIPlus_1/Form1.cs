@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace GDIPlus_1
 {
@@ -22,8 +23,8 @@ namespace GDIPlus_1
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Image image = Image.FromFile("d:Capture.PNG");
-            // Change "\\d:Capture.PNG" to match your image path and name.
+            Image image = Image.FromFile("D\\:1.JPG");
+            // Change "\\D:1.JPG" to match your image path and name.
             TextureBrush bruch = new TextureBrush(image);
             Rectangle rect = new Rectangle(10, 10, 180, 150);
             g.FillEllipse(brush, rect);
